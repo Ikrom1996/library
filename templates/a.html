@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Authors
+{% endblock %}
+
+{% block content %}
+   <table class="table table-striped">
+   <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">first_name</th>
+      <th scope="col">last_name</th>
+      <th scope="col">birth_date</th>
+    </tr>
+  </thead>
+       {% for author in ikrom %}
+            <tbody>
+            <tr>
+              <td>{{ author.first_name }}</td>
+              <td>{{ author.last_name }}</td>
+              <td>{{ author.birth_date }}</td>
+            </tr>
+            </tbody>
+       {% endfor %}
+    </table>
+
+  
+{% endblock %}

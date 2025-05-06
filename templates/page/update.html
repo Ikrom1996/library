@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    book_update
+{% endblock %}
+
+
+{% block content %}
+    <form method="post" action="{% url 'book_update' form.instance.pk %}">
+    {% csrf_token %}
+        {{ form.as_p }}
+{#        <label for="btitle">Title</label> <br>#}
+{#        <input type="text" id="btitle" name="title" value="{{ book.title }}"> <br>#}
+{#        <label for="description">description</label> <br>#}
+{#        <textarea name="description" rows="10" cols="30" id="description" >{{ book.description }}</textarea> <br>#}
+{#        <label for="published_date" >Published Date </label> <br>#}
+{#        <input type="date" id="birth_date" name="published_date" value="{{ book.published_date }}"> <br> <br>#}
+        <button class="btn btn-primary" >Submit</button>
+    </form>
+{% endblock %}

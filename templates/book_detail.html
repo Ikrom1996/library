@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Book Detail {% endblock %}
+
+{% block content %}
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm" style="width: 24rem;">
+
+
+       {% if book.image %}
+            <img src="{{ book.image.url }}" class="card-img-top" alt="Book Image">
+        {% else %}
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSil3Xetj_Ale3tpINNLaPEugYlcH8OCtUEJgd72IFIWjuEjg7i-RzPH9PkN_ioI4gnQqg&usqp=CAU" class="card-img-top" alt="Kitob Rasmi">
+        {% endif %}
+
+
+
+
+        <div class="card-body">
+            <h5 class="card-title">📚 {{ book.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">✍️ Author: {{ book.author }}</h6>
+            <p class="card-text mt-3">{{ book.description }}</p>
+            <p class="text-muted">📅 Published on: {{ book.created_at }}</p>
+            <hr>
+            <p class="text-end text-secondary">Updated on: {{ book.updated_at }}</p>
+                {% if book.file.url %}
+            <a href="{{ book.file.url }}" class="btn btn-outline-primary w-100 mt-3">> Download <</a>
+            {% else %}
+                Electron varianti yoq
+                {% endif %}
+            <a href="{% url 'book_list' %}" class="btn btn-outline-primary w-100 mt-3">← Back to List</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

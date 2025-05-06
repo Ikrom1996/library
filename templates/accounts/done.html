@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Email Sent{% endblock %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 500px;">
+    <div class="alert alert-success shadow rounded-3 text-center">
+        <h4 class="alert-heading">📬 Email Yuborildi!</h4>
+        <p>Parolni tiklash uchun havola emailingizga yuborildi.</p>
+        <hr>
+        <a href="{% url 'accounts:login_user' %}" class="btn btn-outline-primary mt-2">🔑 Login sahifasiga qaytish</a>
+    </div>
+</div>
+{% endblock %}

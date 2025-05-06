@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Create Book
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">📖 Create a New Book</h4>
+                </div>
+                <div class="card-body">
+                    <!-- File yuklash uchun enctype qo‘shildi -->
+                    <form action="{% url 'book_create' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        {{ form.as_p }}
+
+                        <button type="submit" class="btn btn-success w-100">📘 Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
